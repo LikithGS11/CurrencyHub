@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  currencyhub:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - CURRENCY=${CURRENCY:-ARS}
+    volumes:
+      - ./currencyhub.db:/app/currencyhub.db
+    restart: unless-stopped
+
