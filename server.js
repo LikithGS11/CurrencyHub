@@ -24,6 +24,21 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({
+    message: "Welcome to CurrencyHub API 👋",
+    endpoints: {
+      quotes: "/quotes",
+      average: "/average",
+      slippage: "/slippage",
+      health: "/health"
+    },
+    author: "Likith G S",
+    deployed_on: "Render"
+  });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`CurrencyHub server running on port ${PORT}`);
