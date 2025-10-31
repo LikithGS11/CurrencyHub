@@ -35,7 +35,8 @@ app.get('/', (req, res) => {
       health: "/health"
     },
     author: "Likith G S",
-    deployed_on: "Render"
+    deployed_on: "Render",
+    version: "1.0.0"
   });
 });
 
